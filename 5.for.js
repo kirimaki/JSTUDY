@@ -7,22 +7,53 @@
 // 4. 조건식이 거짓이 될때까지 2~3번을 반복함
 
 for(let i = 0; i < 5; i++) {
+    
     console.log(i)
+    return; // break; 
 }
 
 const array = [1,2,3,4,5];
 
 // 향상된 Loop Statement
-for(let i = 0; i < 5; i++) {
- for(let j in array) {
-    console.log(i, j);
- }
+for(let i in array) {
+    console.log(i);
+    break;
 }
 
 // ES6 문법 여기서 이어서하기!!
-array.forEach(element => {
-    console.log(element);
-});
+try {
+    array.forEach(element => {
+        if(element === 2) {
+            return; // continue;
+        }
+
+        if(element === 4) {
+            throw new test222("test");
+        }
+        console.log(element);
+    });
+} catch(e) {
+    console.log('빠져나오셈');
+}
+
+const result = {
+    id : 0,
+    name : "Kim"
+}
+
+const result2 = {
+    id : 1,
+    name : "Choi"
+}
+
+const array2 = [];
+array2.push(result);
+array2.push(result2);
+
+array2.forEach(object => {
+    console.log(object.name);
+})
+
 
 // 반복문 제어 : continue, break;
 for(let i = 0; i < 20; i++) {
@@ -32,4 +63,12 @@ for(let i = 0; i < 20; i++) {
         break; // i가 10이 되었을 때 반복하지 않겠다!
     }
     console.log(i);
+}
+
+label :
+for(let i=0; i<=5; i++) {
+    for(let j=0; j<=3; j++) {
+        console.log(i, j);
+        if(j=2) break label;
+    }
 }
