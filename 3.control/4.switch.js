@@ -1,7 +1,7 @@
 // 조건문 Conditional Statement
 // Switch
 // if else if else if else if else ... else
-// 정해진 범위안의 값에 대해 특정한 일을 해야 하는 경우
+// ****정해진 범위안의 값에 대해 특정한 일을 해야 하는 경우
 
 let day = 6; // 0: 월요일, 1: 화요일... 6: 일요일
 let dayName;

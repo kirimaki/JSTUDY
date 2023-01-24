@@ -42,7 +42,18 @@ let count = 10;
 while(isGoing) {
 	count--;
 	if(count === 0) {
-		isGoing = false;
+		isGoing = false; // 해당 false 
 	}
-	console.log(count);
+	console.log(count); // 10 9 8 7 ... 0 
 }
+
+let isActive = false;
+while(isActive) {
+	console.log('while문 살았니1');
+}
+
+do {
+	console.log('do 실행 후 while문 살았니?');
+    console.log(count);
+    count++;
+} while((count===1));
