@@ -19,3 +19,4 @@ function sum(a, b, ...numbers) {
 }
 
 sum(1, 2, undefined, null, NaN, false, true, 0, '0');
+add(undefined, 1);

@@ -25,3 +25,11 @@ console.log(add(3, 4));
 (function run() {
     console.log('😍');
 })();
+
+!function run() {
+	console.log('우잉!?');
+}();
+
+(() => {
+	console.log('화살표함수는 요것도댐!?');
+})();
