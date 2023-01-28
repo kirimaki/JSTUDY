@@ -22,9 +22,3 @@ console.log(Champion);
 const sibir = Champion.makeRandomFruit();
 console.log(sibir);
 sibir.skill();
-
-Math.pow();
-
-const test = new Math();
-test.trunk(123);
-Number.isFinite(1);
