@@ -13,6 +13,9 @@ console.log(isTrue.valueOf());
  * false
  */
 
+const response = undefined;
+console.log(!!response);
+
 /**
  * Truthy
  * 1

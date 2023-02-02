@@ -17,7 +17,7 @@ console.log(parseInt('12.9999999999'));
 const URL = 'https://드림코딩.com';
 const encoded = encodeURI(URL);
 console.log(encoded);
-const decoded = decodeURI(encoded)
+const decoded = decodeURI(encoded);
 console.log(decoded);
 
 // 전체 URL이 아니라 부분적인 것은 Component 이용

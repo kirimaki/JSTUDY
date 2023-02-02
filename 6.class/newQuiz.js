@@ -43,12 +43,3 @@ jy.cal = 10000000;
 
 const partJy = new TemporaryStaff('partJY', 'test', 20);
 partJy.calculate;
-
-// class TemporaryStaff extends Staff {
-//     static #TEMPORARY_PAY = 8000
-//     constructor(name, department) {
-//         this.name = name;
-//         this.department = department;
-//         this.payOfMonth = TemporaryStaff.#TEMPORARY_PAY;
-//     }
-// }
