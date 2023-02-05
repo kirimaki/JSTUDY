@@ -4,17 +4,30 @@
 // 5, 순회하는 숫자의 두배값을 다 출력하고 싶음
 // function iterate(max, action)
 
-const iterate = (val, callback) => {
-    for(let i = 1; i <= val; i++) {
-        callback(i);
+const iterate = (array, callback) => {
+    for(let i = 0; i < array.length; i++) {
+        let cnt = callback(array[i]);
+        console.log(cnt);
     }
 }
 
-const print = val => console.log(val);
-const double = val => console.log(val * 2);
+const test = function(val) {
+    console.log(val * 3);
+}
 
-iterate(10, print);
-iterate(10, double);
+const test2 = (val) => {
+    return val === 1;    
+}
+
+const testArray = [1,2,3,4];
+iterate(testArray, test2);
+
+
+// const print = val => console.log(val);
+// const double = val => console.log(val * 2);
+
+// iterate(10, print);
+// iterate(10, double);
 
 setTimeout(() => {
     console.log('3초 뒤 호출!');
