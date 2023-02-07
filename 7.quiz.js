@@ -19,12 +19,7 @@ function replace(array, from, to) {
 console.log(count([ '🍌', '🥝', '🍇', '🥝' ], '🥝'));
 
 function count(array, target) {
-    return array.reduce((count, value) => {
-        if(value === target) {
-            count++;
-        }
-        return count;
-    }, 0)
+    return array.filter((item) => item === target).length;
 }
 
 // 퀴즈3: 배열1, 배열2 두개의 배열을 전달받아,
@@ -33,12 +28,18 @@ function count(array, target) {
 // output: [ '🍌', '🍇' ]
 
 function quiz3(array1, array2) {
-    return array1.filter((item) => {
-        return item.includes(array2)
-    })
+    return array1.filter((item) => array2.includes(item))
 }
 
 console.log(quiz3(['🍌', '🥝', '🍇'],['🍌', '🍓', '🍇', '🍓']));
 
 // 퀴즈4 : 5이상(보다 큰) 숫자들의 평균
 const nums = [3, 16, 5, 25, 4, 34, 21];
+
+const quiz4 = nums.filter((item) => {
+    return item > 5
+}).reduce((sum, value, _, array) => {
+    return sum += (value / array.length);
+}, 0);
+
+console.log(quiz4);
