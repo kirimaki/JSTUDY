@@ -3,19 +3,12 @@
 // input: ['🍌', '🍓', '🍇', '🍓']
 // output: [ '🍌', '🥝', '🍇', '🥝' ]
 
-let arr = ['🍌', '🍓', '🍇', '🍓'];
+const array = ['🍌', '🍓', '🍇', '🍓'];
+console.log(replace(array, '🍓', '🥝'));
 
-function test(arr, from, to) {
-    const arr2 = arr.slice();
-    for(let i=0; i<= arr2.length; i++) {
-        if(arr2[i] === from) {
-            arr2[i] = to;
-        }
-    }
-    return arr2;
+function replace(array, from, to) {
+    return array.map((item) => item === from ? to : item);
 }
-const result = test(arr, '🍌', '🥝');
-console.log(result);
 
 // 퀴즈2:
 // 배열과 특정한 요소를 전달받아,
@@ -23,39 +16,29 @@ console.log(result);
 // input: [ '🍌', '🥝', '🍇', '🥝' ], '🥝'
 // output: 2
 
-quiz2Input = [ '🍌', '🥝', '🍇', '🥝'];
-quiz2Element = '🥝';
+console.log(count([ '🍌', '🥝', '🍇', '🥝' ], '🥝'));
 
-function quiz2(arr, ele) {
-    let cnt = 0;
-    arr.forEach((fruit) => {
-        fruit === ele && cnt++; 
-    })
-    return cnt;
+function count(array, target) {
+    return array.reduce((count, value) => {
+        if(value === target) {
+            count++;
+        }
+        return count;
+    }, 0)
 }
-
-const result2 = quiz2(quiz2Input, quiz2Element);
-console.log(result2);
 
 // 퀴즈3: 배열1, 배열2 두개의 배열을 전달받아,
 // 배열1 아이템중 배열2에 존재하는 아이템만 담고 있는 배열 반환
 // input: ['🍌', '🥝', '🍇'],  ['🍌', '🍓', '🍇', '🍓']
 // output: [ '🍌', '🍇' ]
 
-const arr1 = ['🍌', '🥝', '🍇'];
-const arr2 = ['🍌', '🍓', '🍇', '🍓'];
-
-function quiz3(arr1, arr2) {
-    const arr3 = [];
-    for(let i=0; i<arr1.length; i++) {
-        if(arr2.includes(arr1[i])) {
-            arr3.push(arr1[i]);
-        }
-    }
-    return arr3;
+function quiz3(array1, array2) {
+    return array1.filter((item) => {
+        return item.includes(array2)
+    })
 }
 
-console.log(quiz3(arr1, arr2));
+console.log(quiz3(['🍌', '🥝', '🍇'],['🍌', '🍓', '🍇', '🍓']));
 
-// 퀴즈4. 5이상(보다 큰) 숫자들의 평균
+// 퀴즈4 : 5이상(보다 큰) 숫자들의 평균
 const nums = [3, 16, 5, 25, 4, 34, 21];
