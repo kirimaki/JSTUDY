@@ -14,4 +14,3 @@ console.log(fruits);
 delete fruits[1];
 console.log(fruits);
 
-console.log(fruits.pop(2));
