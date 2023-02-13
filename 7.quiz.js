@@ -7,14 +7,11 @@ let fruitArray = ['🍌', '🍓', '🍇', '🍓'];
 let beforeFruit = '🍓';
 let afterFruit = '🥝';
 
-function replaceFruit(arr, before, after) {
-    arr.filter((item) => {
-        return 
-    })
-    return 
+function replaceFruit(arr) {
+    return fruitArray.map((item) => item === beforeFruit ? afterFruit : item);
 }
 
-console.log(fruitArray, beforeFruit, afterFruit);
+console.log(replaceFruit(fruitArray, beforeFruit, afterFruit));
 
 // 퀴즈2:
 // 배열과 특정한 요소를 전달받아,
@@ -47,3 +44,9 @@ console.log(containFruit(fruitArray1, fruitArray2));
 
 // 퀴즈4 : 5이상(보다 큰) 숫자들의 평균
 const nums = [3, 16, 5, 25, 4, 34, 21];
+
+function averageNum(arr) {
+    return arr.filter((num) => num > 5).reduce((sum, curr, _, arr) => sum += curr / arr.length);
+}
+
+console.log(averageNum(nums));
